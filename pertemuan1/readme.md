@@ -1,5 +1,6 @@
 # <h1 align="center">Laporan Praktikum Modul 1 HELLO WORLD!</h1>
 
+```markdown
 <h1 align="center">Hamid Sabirin-2311102129</h1>
 
 <h2 align="center">PERTEMUAN 1</h2>
@@ -15,9 +16,11 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello, World!")
+    fmt.Println("Hello, World!")
 }
+```
 
-### Output Screenshot:
+### 2. Output Screenshot:
 
-![hello world!] (https://github.com/Algoritma-IF01/HAMID_SABIRIN_2311102129/blob/main/pertemuan1/assets/hello_world.png)
+![hello world!](assets/hello_world.png)
+```
