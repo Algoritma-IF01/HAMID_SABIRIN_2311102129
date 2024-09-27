@@ -2,13 +2,12 @@
 
 <h1 align="center">Hamid Sabirin-2311102129</h1>
 
-## Dasar Teori
 <h2 align="center">PERTEMUAN 1</h2>
 <h2 align="center">HELLO WORLD!</h2>
 
 A. Hello World!
 
-### 1. Program Hello World!
+### 1. Program Hello World! di Go
 
 ```go
 package main
