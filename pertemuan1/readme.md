@@ -20,4 +20,4 @@ func main() {
 
 ### Output Screenshot:
 
-![hello world!](assets/hello_world.png)
+![hello world!] (https://github.com/Algoritma-IF01/HAMID_SABIRIN_2311102129/blob/main/pertemuan1/assets/hello_world.png)
