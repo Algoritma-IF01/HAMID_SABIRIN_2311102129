@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 1 HELLO WORLD!</h1>
+# <h1 align="center">Laporan Praktikum Modul 2 STRUKTUR KONTROL!</h1>
 
 
 <h1 align="center">Hamid Sabirin-2311102129</h1>
