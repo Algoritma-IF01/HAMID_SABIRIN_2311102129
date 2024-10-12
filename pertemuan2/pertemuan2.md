@@ -3,10 +3,9 @@
 
 <h1 align="center">Hamid Sabirin-2311102129</h1>
 
-<h2 align="center">PERTEMUAN 1</h2>
-<h2 align="center">HELLO WORLD!</h2>
+<h2 align="center">PERTEMUAN 2</h2>
+<h2 align="center">STRUKTUR KONTROL</h2>
 
-A. Hello World!
 
 ### 1. Hipotenusa!
 
