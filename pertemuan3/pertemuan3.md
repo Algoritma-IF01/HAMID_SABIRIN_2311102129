@@ -288,29 +288,29 @@ B. Mengapa demikian ?
 
 1. Tipe Data Tidak Sesuai
 
-Kesalahan: 
+- Kesalahan: 
 Program mencoba menyimpan nilai string (seperti "A", "AB", dll.) ke dalam variabel nam yang bertipe float64. Ini tidak diperbolehkan dalam Go karena tipe data harus konsisten. float64 hanya dapat menyimpan nilai numerik, bukan string.
 
-Mengapa demikian: 
+- Mengapa demikian: 
 Go adalah bahasa yang statically typed, yang berarti variabel tidak dapat berubah tipe datanya setelah dideklarasikan. Oleh karena itu, menyimpan string dalam variabel bertipe numerik (float64) akan menimbulkan error.
 
 2. Urutan Logika yang Tidak Efisien (Tanpa else if)
-Kesalahan: 
+- Kesalahan: 
 Menggunakan if secara berurutan tanpa else if menyebabkan semua kondisi dievaluasi, meskipun sudah ada satu kondisi yang benar. Ini bisa membuat program mengevaluasi kondisi yang tidak perlu dan menyebabkan nilai nmk berubah tidak sesuai.
 
-Mengapa demikian: 
+- Mengapa demikian: 
 Ketika hanya menggunakan if, setiap kondisi akan diperiksa, meskipun sebelumnya sudah ada kondisi yang terpenuhi. Ini membuat logika program menjadi tidak efisien, karena seharusnya cukup memeriksa satu kondisi yang benar dan langsung berhenti.
 
 3. Variabel nmk Tidak Pernah Diinisialisasi
-Kesalahan: 
+- Kesalahan: 
 Variabel nmk dideklarasikan tetapi tidak pernah diisi atau diinisialisasi dengan nilai. Akibatnya, ketika program mencoba mencetak nilai nmk, hasilnya adalah string kosong.
 
-Mengapa demikian: 
+- Mengapa demikian: 
 Setiap variabel dalam Go harus diinisialisasi atau diisi nilainya sebelum digunakan. Jika tidak, hasilnya bisa tidak sesuai dengan yang diharapkan (seperti mencetak string kosong).
 
 C. Alur Program Seharusnya :
 
-Program seharusnya menanyakan nilai akhir mata kuliah dari pengguna dan kemudian menentukan nilai huruf berdasarkan rentang nilai tersebut. 
+- Program seharusnya menanyakan nilai akhir mata kuliah dari pengguna dan kemudian menentukan nilai huruf berdasarkan rentang nilai tersebut. 
 Berikut adalah alur program yang benar:
 1. Menerima input nilai akhir mata kuliah.
 2. Menggunakan else if untuk memastikan hanya satu kondisi yang dievaluasi.
