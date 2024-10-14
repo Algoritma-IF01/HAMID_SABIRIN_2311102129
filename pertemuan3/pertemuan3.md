@@ -262,11 +262,22 @@ func main() {
 
 ### 6. Tugas4b
 
-1. Kesalahan: Program tidak menggunakan else if pada beberapa kondisi, sehingga semua kondisi dievaluasi meskipun kondisi sebelumnya sudah terpenuhi.
-    - Sebagai contoh, jika nam = 80.1, maka kondisi nam > 80 akan terpenuhi, namun kondisi lainnya juga akan diperiksa karena tidak ada else if pada kondisi selanjutnya.
+Daftar Kesalahan:
+1. Penggunaan variabel yang salah (nam diubah menjadi string):
+- Pada baris seperti nam = "A", "AB", "B", dll., program mencoba menyimpan nilai string ke dalam variabel nam yang sebelumnya dideklarasikan sebagai float64. Variabel nam seharusnya digunakan untuk nilai numerik, bukan string. Variabel yang seharusnya digunakan untuk menyimpan nilai huruf (nilai akhir mata kuliah) adalah nmk.
+Perbaikan: Gantilah nam = "A" menjadi nmk = "A".
 
-2. Alur Program yang Seharusnya: Seharusnya, hanya satu kondisi yang akan dievaluasi untuk satu nilai nam. Misalnya, jika nam > 80 terpenuhi, maka program langsung memberikan nilai A dan mengabaikan kondisi lainnya. Oleh karena itu, struktur if-else if-else diperlukan agar hanya satu kondisi yang dievaluasi, meningkatkan efisiensi dan akurasi program.
+2. Output menggunakan variabel yang salah (nmk tidak pernah diisi):
+- Program mencetak variabel nmk di akhir, tetapi variabel ini tidak pernah diisi dengan nilai apapun. Nilai-nilai huruf seperti "A", "B", dan seterusnya seharusnya disimpan dalam nmk, bukan dalam nam.
+Perbaikan: Pastikan semua penugasan nilai string (seperti "A", "B", dll.) disimpan ke dalam variabel nmk, bukan nam.
 
+3. Kondisi terpisah tanpa else if:
+- Semua pernyataan if dievaluasi secara terpisah. Artinya, meskipun nam > 80 benar, semua kondisi if berikutnya tetap diperiksa, sehingga nilai yang benar bisa tertimpa oleh kondisi berikutnya.
+Perbaikan: Gunakan struktur else if untuk memastikan bahwa hanya satu kondisi yang dieksekusi berdasarkan rentang nilai nam.
+
+4. Masalah logika pada kondisi if nam <= 40:
+- Pada blok terakhir, ada kombinasi if nam > 40 dan else if nam <= 40. Ini secara teknis benar, tetapi bisa lebih sederhana. Jika semua kondisi sebelumnya salah (yaitu, semua nilai nam lebih kecil atau sama dengan 40), cukup gunakan else untuk menangani kondisi tersebut.
+Perbaikan: Gantilah else if nam <= 40 dengan else.
 
 ### 7. Tugas4c
 
