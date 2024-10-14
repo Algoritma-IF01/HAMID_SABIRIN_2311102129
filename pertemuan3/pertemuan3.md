@@ -266,7 +266,8 @@ func main() {
 
 ### 6. Tugas4b
 
-Daftar Kesalahan:
+A. Daftar Kesalahan:
+
 1. Penggunaan variabel yang salah (nam diubah menjadi string):
 - Pada baris seperti nam = "A", "AB", "B", dll., program mencoba menyimpan nilai string ke dalam variabel nam yang sebelumnya dideklarasikan sebagai float64. Variabel nam seharusnya digunakan untuk nilai numerik, bukan string. Variabel yang seharusnya digunakan untuk menyimpan nilai huruf (nilai akhir mata kuliah) adalah nmk.
 Perbaikan: Gantilah nam = "A" menjadi nmk = "A".
@@ -282,6 +283,39 @@ Perbaikan: Gunakan struktur else if untuk memastikan bahwa hanya satu kondisi ya
 4. Masalah logika pada kondisi if nam <= 40:
 - Pada blok terakhir, ada kombinasi if nam > 40 dan else if nam <= 40. Ini secara teknis benar, tetapi bisa lebih sederhana. Jika semua kondisi sebelumnya salah (yaitu, semua nilai nam lebih kecil atau sama dengan 40), cukup gunakan else untuk menangani kondisi tersebut.
 Perbaikan: Gantilah else if nam <= 40 dengan else.
+
+B. Mengapa demikian ? 
+
+1. Tipe Data Tidak Sesuai
+
+Kesalahan: 
+Program mencoba menyimpan nilai string (seperti "A", "AB", dll.) ke dalam variabel nam yang bertipe float64. Ini tidak diperbolehkan dalam Go karena tipe data harus konsisten. float64 hanya dapat menyimpan nilai numerik, bukan string.
+
+Mengapa demikian: 
+Go adalah bahasa yang statically typed, yang berarti variabel tidak dapat berubah tipe datanya setelah dideklarasikan. Oleh karena itu, menyimpan string dalam variabel bertipe numerik (float64) akan menimbulkan error.
+
+2. Urutan Logika yang Tidak Efisien (Tanpa else if)
+Kesalahan: 
+Menggunakan if secara berurutan tanpa else if menyebabkan semua kondisi dievaluasi, meskipun sudah ada satu kondisi yang benar. Ini bisa membuat program mengevaluasi kondisi yang tidak perlu dan menyebabkan nilai nmk berubah tidak sesuai.
+
+Mengapa demikian: 
+Ketika hanya menggunakan if, setiap kondisi akan diperiksa, meskipun sebelumnya sudah ada kondisi yang terpenuhi. Ini membuat logika program menjadi tidak efisien, karena seharusnya cukup memeriksa satu kondisi yang benar dan langsung berhenti.
+
+3. Variabel nmk Tidak Pernah Diinisialisasi
+Kesalahan: 
+Variabel nmk dideklarasikan tetapi tidak pernah diisi atau diinisialisasi dengan nilai. Akibatnya, ketika program mencoba mencetak nilai nmk, hasilnya adalah string kosong.
+
+Mengapa demikian: 
+Setiap variabel dalam Go harus diinisialisasi atau diisi nilainya sebelum digunakan. Jika tidak, hasilnya bisa tidak sesuai dengan yang diharapkan (seperti mencetak string kosong).
+
+C. Alur Program Seharusnya :
+
+Program seharusnya menanyakan nilai akhir mata kuliah dari pengguna dan kemudian menentukan nilai huruf berdasarkan rentang nilai tersebut. 
+Berikut adalah alur program yang benar:
+1. Menerima input nilai akhir mata kuliah.
+2. Menggunakan else if untuk memastikan hanya satu kondisi yang dievaluasi.
+3. Menggunakan variabel terpisah untuk menyimpan nilai huruf (nmk).
+4. Mencetak nilai huruf berdasarkan nilai numerik.
 
 ### 7. Tugas4c
 
