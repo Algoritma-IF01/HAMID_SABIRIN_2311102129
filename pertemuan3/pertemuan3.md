@@ -266,7 +266,7 @@ func main() {
 ### Output Screenshot:
 
 ![tugas 4a](assets/tugas4a.png)
-
+Jawaban : Error, code tidak bisa di jalan kan karena ada kesalahan pada code tersebut.
 ### 6. Tugas4b
 
 A. Daftar Kesalahan:
