@@ -4,42 +4,45 @@ import (
 	"fmt"
 )
 
-func main() {
-	for i := 1; i <= 3; i++ {
-		var beratParsel, kg, gram int
-		var biayaPerKg, biayaSisa, totalBiaya int
+func hitungBiayaPos(berat int) (int, int, int, int, bool) {
+	biayaPerKg := 10000
+	kg := berat / 1000
+	sisaGram := berat % 1000
+	biayaKg := kg * biayaPerKg
+	var biayaSisaGram int
+	biayaDitambahkan := true 
 
-		// Input berat parsel dalam gram
-		fmt.Printf("Contoh #%d:\n ", i)
-		fmt.Print("Berat parsel (gram): ")
-		fmt.Scan(&beratParsel)
-
-		// berat dalam kg dan sisa gram
-		kg = beratParsel / 1000
-		gram = beratParsel % 1000
-
-		//  biaya per kg 
-		biayaPerKg = kg * 10000
-
-		// biaya sisa berdasarkan gram
-		if gram > 0 && kg < 10 {
-			if gram <= 500 {
-				biayaSisa = gram * 5
-			} else {
-				biayaSisa = gram * 15
-			}
+	// jika berat total >= 10kg, sisa gram tetap dihitung, tapi tidak ditambahkan ke total biaya
+	if kg >= 10 {
+		biayaSisaGram = sisaGram * 5 
+		biayaDitambahkan = false    
+	} else {
+		// menghitung biaya untuk sisa gram jika berat kurang dari 10kg
+		if sisaGram >= 500 {
+			biayaSisaGram = sisaGram * 5 
 		} else {
-			biayaSisa = 0 
+			biayaSisaGram = sisaGram * 15 
 		}
-
-		// total biaya
-		totalBiaya = biayaPerKg + biayaSisa
-
-		// Output 
-		fmt.Printf("Detail berat: %d kg + %d gram\n", kg, gram)
-		fmt.Printf("Detail biaya: Rp. %d + Rp. %d\n", biayaPerKg, biayaSisa)
-		fmt.Printf("Total biaya: Rp. %d\n\n", totalBiaya)
 	}
 
-	fmt.Println("Proses selesai.")
+	return kg, sisaGram, biayaKg, biayaSisaGram, biayaDitambahkan
+}
+
+func main() {
+	for i := 1; i <= 3; i++ {
+		var berat int
+		fmt.Printf("Contoh #%d:\n", i)
+		fmt.Print("Berat parsel (gram): ")
+		fmt.Scan(&berat)
+
+		kg, sisaGram, biayaKg, biayaSisaGram, biayaDitambahkan := hitungBiayaPos(berat)
+		totalBiaya := biayaKg
+		if biayaDitambahkan {
+			totalBiaya += biayaSisaGram
+		}
+
+		fmt.Printf("Detail berat: %d kg + %d gr\n", kg, sisaGram)
+		fmt.Printf("Detail biaya: Rp. %d + Rp. %d\n", biayaKg, biayaSisaGram)
+		fmt.Printf("Total biaya: Rp. %d\n\n", totalBiaya)
+	}
 }
