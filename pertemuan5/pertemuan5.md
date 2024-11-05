@@ -5,6 +5,7 @@
 <h2 align="center">PERTEMUAN 5</h2>
 <h2 align="center">STRUCT & ARRAY</h2> 
 
+
 ### 1. Latihan1
 
 ```go
