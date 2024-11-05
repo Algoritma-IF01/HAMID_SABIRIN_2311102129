@@ -1,0 +1,49 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var clubA, clubB string
+	var scoreA, scoreB int
+	var numMatches int
+	var winners []string
+
+	fmt.Print("Masukkan nama Klub A: ")
+	fmt.Scanln(&clubA)
+	fmt.Print("Masukkan nama Klub B: ")
+	fmt.Scanln(&clubB)
+	fmt.Print("Masukkan jumlah pertandingan: ")
+	fmt.Scanln(&numMatches)
+
+	for i := 1; i <= numMatches; i++ {
+		fmt.Printf("Pertandingan %d (skor %s): ", i, clubA)
+		fmt.Scanln(&scoreA)
+		fmt.Printf("Pertandingan %d (skor %s): ", i, clubB)
+		fmt.Scanln(&scoreB)
+
+		if scoreA < 0 || scoreB < 0 {
+			fmt.Println("Pertandingan selesai")
+			break
+		}
+
+		if scoreA > scoreB {
+			winners = append(winners, clubA)
+		} else if scoreB > scoreA {
+			winners = append(winners, clubB)
+		} else {
+			winners = append(winners, "Draw")
+		}
+	}
+
+	fmt.Println("\nHasil Pertandingan:")
+	for i, winner := range winners {
+		if winner == "Draw" {
+			fmt.Printf("Hasil %d : Draw\n", i+1)
+		} else {
+			fmt.Printf("Hasil %d : %s\n", i+1, winner)
+		}
+	}
+	fmt.Println("Pertandingan selesai")
+}
